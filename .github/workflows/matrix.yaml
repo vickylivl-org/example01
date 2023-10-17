@@ -2,7 +2,7 @@ name: Matrix
 on: [push]
 
 #------- ORIGINAL --------#
-# X {os: ubuntu-latest, node-version: 14, is-ubuntu: true, experimental: false}
+# X{os: ubuntu-latest, node-version: 14, is-ubuntu: true, experimental: false}
 # {os: ubuntu-latest, node-version: 15, is-ubuntu: true, experimental: false}
 # {os: ubuntu-latest, node-version: 16, is-ubuntu: true, experimental: true}
 # {os: windows-latest, node-version: 14, experimental: false}
@@ -18,7 +18,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [14, 15, 16]
-        includes:
+        include:
           - os: ubuntu-latest
             is-ubuntu: true
           - os: macos-latest
