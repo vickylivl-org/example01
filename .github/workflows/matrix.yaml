@@ -32,10 +32,12 @@ jobs:
         exclude:
           - os: ubuntu-latest
             node-version: 14
-      fail-fast: false  # if any job in our matrix failed, the other jobs are going to continue normally.
+      fail-fast: true  # if any job in our matrix failed, the other jobs are going to continue normally.
       max-parallel: 3   # workflow will run a maximum of 3 jobs at a time
     runs-on: ${{ matrix.os }}
     steps:
+      - if: matrix.experimental == true
+        run: exit 1
       - run: node -v
       - run: echo '${{ toJson(matrix) }}'
       - uses: actions/setup-node@v3
