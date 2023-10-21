@@ -9,7 +9,7 @@ on:
         required: false
 jobs:
   calling-a-reusable-wf:
-    uses: vickylivl-org/workflows/.github/workflows/reusable.yaml@master
+    uses: github-actions-course/workflows/.github/workflows/reusable.yaml@main
     with:
       name: ${{ inputs.name }}
     secrets:
